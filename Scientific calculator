@@ -1,0 +1,104 @@
+# Scientific calculator
+
+import math
+
+print("=== SCIENTIFIC CALCULATOR ===")
+print("Type 'exit' to quit.\n")
+
+while True:
+    print("\n--- MENU ---")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Power")
+    print("6. Square root")
+    print("7. Sine")
+    print("8. Cosine")
+    print("9. Tangent")
+    print("10. Natural logarithm (ln)")
+    print("11. Base 10 logarithm")
+    print("12. Factorial")
+    print("13. Absolute value")
+    print("0. Exit")
+    
+    option = input("\nChoose an option: ")
+    
+    if option == "0" or option.lower() == "exit":
+        print("Goodbye!")
+        break
+    
+    elif option == "1":
+        a = float(input("First number: "))
+        b = float(input("Second number: "))
+        print(f"  {a} + {b} = {a + b}")
+    
+    elif option == "2":
+        a = float(input("First number: "))
+        b = float(input("Second number: "))
+        print(f"  {a} - {b} = {a - b}")
+    
+    elif option == "3":
+        a = float(input("First number: "))
+        b = float(input("Second number: "))
+        print(f"  {a} * {b} = {a * b}")
+    
+    elif option == "4":
+        a = float(input("Numerator: "))
+        b = float(input("Denominator: "))
+        if b != 0:
+            print(f"  {a} / {b} = {a / b}")
+        else:
+            print("  Error: division by zero")
+    
+    elif option == "5":
+        base = float(input("Base: "))
+        exponent = float(input("Exponent: "))
+        print(f"  {base}^{exponent} = {math.pow(base, exponent)}")
+    
+    elif option == "6":
+        num = float(input("Number: "))
+        if num >= 0:
+            print(f"  √{num} = {math.sqrt(num)}")
+        else:
+            print("  Error: cannot calculate square root of a negative number")
+    
+    elif option == "7":
+        angle = float(input("Angle in degrees: "))
+        print(f"  sin({angle}°) = {math.sin(math.radians(angle))}")
+    
+    elif option == "8":
+        angle = float(input("Angle in degrees: "))
+        print(f"  cos({angle}°) = {math.cos(math.radians(angle))}")
+    
+    elif option == "9":
+        angle = float(input("Angle in degrees: "))
+        print(f"  tan({angle}°) = {math.tan(math.radians(angle))}")
+    
+    elif option == "10":
+        num = float(input("Number: "))
+        if num > 0:
+            print(f"  ln({num}) = {math.log(num)}")
+        else:
+            print("  Error: number must be positive")
+    
+    elif option == "11":
+        num = float(input("Number: "))
+        if num > 0:
+            print(f"  log10({num}) = {math.log10(num)}")
+        else:
+            print("  Error: number must be positive")
+    
+    elif option == "12":
+        num = int(input("Integer: "))
+        if num >= 0:
+            print(f"  {num}! = {math.factorial(num)}")
+        else:
+            print("  Error: factorial only exists for positive integers")
+    
+    elif option == "13":
+        num = float(input("Number: "))
+        print(f"  |{num}| = {abs(num)}")
+    
+    else:
+        print("  Invalid option")
